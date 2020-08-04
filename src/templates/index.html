@@ -1,13 +1,32 @@
-{% extends 'layout/main.html' %} {% block content %}
-<div>
-  <h2>메인 페이지</h2>
-  <ul>
-    <li>
-      <a href="/article/new">글 작성</a>
-    </li>
-    <li>
-      <a href="/article">글 목록</a>
-    </li>
-  </ul>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div>
+      <h2>메인 페이지</h2>
+      <select id="product-list">
+        {% for product in allProducts %}
+        <option value="{{ product._id }}">{{ product.name }}</option>
+        {% endfor %}
+      </select>
+
+      <select id="new-product-category">
+        <option value="기계">기계</option>
+        <option value="부품">부품</option>
+      </select>
+
+      <input type="text" id="new-product-name" placeholder="제품이름" />
+      <button id="add-product-btn">제품추가</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

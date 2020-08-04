@@ -26,3 +26,8 @@
         > Windows: set FLASK_ENV=development    
         Linux/MacOS : export FLASK_ENV=development    
         $ flask run
+
+* **2020.08.04**
+
+1. PyMongo 설치
+   > pip install pymongo
